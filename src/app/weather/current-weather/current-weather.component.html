@@ -1,0 +1,9 @@
+<div class="col m6 offset-m3">
+
+  <app-weather-card
+    [@showUpElement]
+    [color]="'indigo lighten-5'"
+    [weather$]="currentWeatherService.weather$ | async">
+  </app-weather-card>
+
+</div>

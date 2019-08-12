@@ -1,0 +1,50 @@
+<mz-card *ngIf="weather$" [ngClass]="color" class="z-depth-3" [hoverable]="true">
+  <mz-card-content>
+
+    <div class="row center">
+      <div class="col m4 center">
+
+        <app-weather-icon [cod]="weather$.cod"></app-weather-icon>
+
+      </div>
+      <div class="col m8">
+        <div class="row center">
+
+          <div class="col m12 center" *ngIf="weather$.temp">
+
+            <p class="info-text">Temperatura</p>
+            <h4 class="header font-weight-bold orange-text text-darken-2">
+              {{ weather$.temp }}°
+            </h4>
+
+          </div>
+          <div class="col m6 center" *ngIf="weather$.minMaxTemp">
+
+            <h5 class="font-weight-bold amber-text text-darken-2">
+              {{ weather$.minMaxTemp.min }}°
+            </h5>
+            <p class="info-text--min-max">Mínima</p>
+
+          </div>
+          <div class="col m6 center" *ngIf="weather$.minMaxTemp">
+
+            <h5 class="font-weight-bold amber-text text-darken-2">
+              {{ weather$.minMaxTemp.max }}°
+            </h5>
+            <p class="info-text--min-max">Máxima</p>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="col m12 text-center">
+
+        <h4 class="header font-weight-bold indigo-text text-darken-2">
+          {{ weather$.name }}
+        </h4>
+        <p class="info-text">{{ weather$.description }}</p>
+
+      </div>
+    </div>
+  </mz-card-content>
+</mz-card>

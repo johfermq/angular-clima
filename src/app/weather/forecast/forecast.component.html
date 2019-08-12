@@ -1,0 +1,19 @@
+<div class="col m12">
+
+  <div class="row center">
+
+    <div
+      class="col m4"
+      [@showUpCollection]="(forecastService.forecast$ | async)?.length"
+      *ngFor="let weather$ of forecastService.forecast$ | async">
+
+      <app-weather-card
+        [weather$]="weather$"
+        [color]="'grey lighten-5'">
+      </app-weather-card>
+
+    </div>
+
+  </div>
+
+</div>

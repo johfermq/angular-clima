@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+/**
+ * Variables
+ */
+@import "variables";
+
+/**
+ * Materialize
+ */
+@import "~materialize-css/sass/materialize";
+
+/**
+ * Weather
+ */
+.waiting {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.font-weight-bold {
+  font-weight: 600;
+}
+
+.info-text {
+  font-style: normal;
+  font-size: 1.4rem;
+}
+
+.info-text--min-max {
+  font-style: normal;
+  font-size: 0.8rem;
+}

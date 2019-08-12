@@ -1,0 +1,17 @@
+/* Variables */
+
+/**
+ * Colores
+ */
+@import "~materialize-css/sass/components/color";
+
+$primary-color: color("indigo", "base");
+$secondary-color: color("amber", "darken-2");
+$success-color: color("teal", "base");
+$error-color: color("red", "base");
+$link-color: color("light-blue", "darken-1");
+
+/**
+ * Fonts
+ */
+$roboto-font-path: "~materialize-css/dist/fonts/roboto/";

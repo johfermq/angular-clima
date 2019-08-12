@@ -1,0 +1,23 @@
+<div class="col m12">
+
+  <!-- <div
+    [@loading]="elements.length"
+    *ngIf="! (currentWeatherService.weather$ | async)"
+  >
+    <div
+      *ngFor="let color of elements"
+      class="circle"
+      [ngStyle]="{ 'background-color': color }">
+    </div>
+  </div> -->
+
+  <div class="waiting" *ngIf="! (currentWeatherService.weather$ | async)">
+    <mz-spinner
+      [color]="'secondary'"
+      [size]="'big'">
+    </mz-spinner>
+
+    <p class="info-text">Esperando la información...</p>
+  </div>
+
+</div>
