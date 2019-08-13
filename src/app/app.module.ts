@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CurrentWeatherService } from './providers/current-weather.service';
 import { ForecastService } from './providers/forecast.service';
 import { GeolocationService } from './providers/geolocation.service';
+import { InfoService } from './providers/info.service';
 
 /**
  * Modules
@@ -20,6 +21,8 @@ import { WeatherModule } from './weather/weather.module';
  * Componentes
  */
 import { AppComponent } from './app.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -30,12 +33,14 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    WeatherModule
+    WeatherModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     CurrentWeatherService,
     ForecastService,
-    GeolocationService
+    GeolocationService,
+    InfoService
   ],
   bootstrap: [AppComponent]
 })

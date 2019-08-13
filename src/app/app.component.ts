@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * Providers
+ */
+import { InfoService } from './providers/info.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,9 +12,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  title = 'Angular Clima';
-
-  constructor() {}
+  constructor(public infoService: InfoService) {}
 
   ngOnInit() {}
 }

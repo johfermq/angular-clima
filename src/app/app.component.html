@@ -1,22 +1,8 @@
-<mz-navbar>
+<mz-navbar navbarClass="z-depth-3">
   <div class="container">
-    <a routerLink="/" class="brand-logo">{{ title }}</a>
+    <a routerLink="/" class="brand-logo">{{ infoService.title }}</a>
   </div>
 </mz-navbar>
 
-<div class="section">
-  <div class="container">
-    <h1 class="header center amber-text text-darken-2">{{ title }}</h1>
-    <div class="row center">
-      <h5 class="header col s12 light">
-        Obtenga el clima actual y el pronóstico de 3 horas por 5 días para su ciudad.
-      </h5>
-    </div>
-    <div class="row center">
-
-      <router-outlet></router-outlet>
-
-    </div>
-  </div>
-</div>
+<router-outlet></router-outlet>
 

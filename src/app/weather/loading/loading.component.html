@@ -1,8 +1,7 @@
-<div class="col m12">
+<div class="col m12" *ngIf="! (currentWeatherService.weather$ | async)">
 
   <!-- <div
     [@loading]="elements.length"
-    *ngIf="! (currentWeatherService.weather$ | async)"
   >
     <div
       *ngFor="let color of elements"
@@ -11,7 +10,7 @@
     </div>
   </div> -->
 
-  <div class="waiting" *ngIf="! (currentWeatherService.weather$ | async)">
+  <div class="waiting">
     <mz-spinner
       [color]="'secondary'"
       [size]="'big'">

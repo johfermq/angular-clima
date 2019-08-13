@@ -2,7 +2,7 @@
   <mz-card-content>
 
     <div class="row center">
-      <div class="col m4 center">
+      <div class="col m4">
 
         <app-weather-icon [cod]="weather$.cod"></app-weather-icon>
 
@@ -10,7 +10,7 @@
       <div class="col m8">
         <div class="row center">
 
-          <div class="col m12 center" *ngIf="weather$.temp">
+          <div class="col m12" *ngIf="weather$.temp">
 
             <p class="info-text">Temperatura</p>
             <h4 class="header font-weight-bold orange-text text-darken-2">
@@ -18,7 +18,7 @@
             </h4>
 
           </div>
-          <div class="col m6 center" *ngIf="weather$.minMaxTemp">
+          <div class="col m6" *ngIf="weather$.minMaxTemp">
 
             <h5 class="font-weight-bold amber-text text-darken-2">
               {{ weather$.minMaxTemp.min }}°
@@ -26,7 +26,7 @@
             <p class="info-text--min-max">Mínima</p>
 
           </div>
-          <div class="col m6 center" *ngIf="weather$.minMaxTemp">
+          <div class="col m6" *ngIf="weather$.minMaxTemp">
 
             <h5 class="font-weight-bold amber-text text-darken-2">
               {{ weather$.minMaxTemp.max }}°
@@ -37,7 +37,7 @@
 
         </div>
       </div>
-      <div class="col m12 text-center">
+      <div class="col m12">
 
         <h4 class="header font-weight-bold indigo-text text-darken-2">
           {{ weather$.name }}

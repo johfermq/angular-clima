@@ -1,8 +1,33 @@
+<div class="section indigo">
+  <div class="container">
+    <div class="row center">
+      <div class="col m6">
 
-<app-current-weather></app-current-weather>
+        <h1 class="header center amber-text text-darken-2">{{ infoService.title }}</h1>
+        <div class="row center">
+          <h5 class="header col s12 light white-text">{{ infoService.description }}</h5>
+        </div>
 
-<app-loading></app-loading>
+      </div>
+      <div class="col m6">
 
-<app-forecast></app-forecast>
+        <app-current-weather></app-current-weather>
 
-<app-geolocation-button></app-geolocation-button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="row center">
+
+      <app-loading></app-loading>
+
+      <app-forecast></app-forecast>
+
+      <app-geolocation-button></app-geolocation-button>
+
+    </div>
+  </div>
+</div>
