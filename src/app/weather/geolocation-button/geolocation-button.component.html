@@ -1,6 +1,11 @@
 <div class="col m12" *ngIf="! (geolocationService.coords$ | async)">
 
-  <button mz-button [large]="true" (click)="geolocationService.requestGeolocation()">
+  <button
+    name="geolocation"
+    mz-button
+    [large]="true" (click)="geolocationService.requestGeolocation()"
+  >
+    <i mz-icon-mdi [align]="'left'" [icon]="'map-marker-outline'"></i>
     Activar mi ubicación
   </button>
 

@@ -10,9 +10,7 @@ export interface Weather {
 }
 
 interface MinMaxWeather {
-  date?: number;
-  day?: number;
-  month?: number;
+  date?: string;
   min?: number;
   max?: number;
 }

@@ -10,7 +10,8 @@ import {
   MzIconMdiModule,
   MzButtonModule,
   MzCardModule,
-  MzSpinnerModule
+  MzSpinnerModule,
+  MzToastModule
 } from 'ngx-materialize';
 
 @NgModule({
@@ -22,7 +23,8 @@ import {
     MzIconMdiModule,
     MzButtonModule,
     MzCardModule,
-    MzSpinnerModule
+    MzSpinnerModule,
+    MzToastModule
   ],
   exports: [
     MzNavbarModule,
@@ -30,7 +32,8 @@ import {
     MzIconMdiModule,
     MzButtonModule,
     MzCardModule,
-    MzSpinnerModule
+    MzSpinnerModule,
+    MzToastModule
   ]
 })
 export class WeatherMaterializeModule { }

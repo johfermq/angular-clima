@@ -12,6 +12,7 @@ import { environment } from './../../environments/environment';
  * Providers
  */
 import { GeolocationService } from './geolocation.service';
+import { MzToastService } from 'ngx-materialize';
 
 /**
  * Interfaces
@@ -27,7 +28,11 @@ export class ForecastService {
   public forecastSubject: Subject<any>;
   public forecast$: Observable<any>;
 
-  constructor(private http: HttpClient, private geolocationService: GeolocationService)
+  constructor(
+    private http: HttpClient,
+    private geolocationService: GeolocationService,
+    private toastService: MzToastService
+  )
   {
     this.forecastSubject = new Subject<any>();
     this.forecast$ = this.forecastSubject.asObservable().pipe(
@@ -48,9 +53,16 @@ export class ForecastService {
       const month: number = date.getMonth() + 1;
       const day: number = date.getDate();
       const key: string = `${month}-${day}`;
+      const options: object = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      }
 
       let tempPerDay: Weather = minMaxPerDay[key] || {
-        minMaxTemp: {}
+        minMaxTemp: {
+          date: date.toLocaleString('es-CO', options)
+        }
       }
 
       if (! tempPerDay.cod || hours === 16)
@@ -79,6 +91,15 @@ export class ForecastService {
     const { latitud, longitud } = coords;
     const argumentos: string = `&lat=${latitud}&lon=${longitud}&appid=${key}`;
 
-    this.http.get(`${urlForecast}${argumentos}`).subscribe(this.forecastSubject);
+    this.http.get(`${urlForecast}${argumentos}`)
+            .subscribe(
+              data => this.forecastSubject.next(data),
+              error => this.showToast('Error al obtener el pronóstico  del clima.', 'red')
+            );
+  }
+
+  showToast(text, color)
+  {
+    this.toastService.show(text, 4000, color);
   }
 }

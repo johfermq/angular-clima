@@ -12,6 +12,7 @@ import { environment } from './../../environments/environment';
  * Providers
  */
 import { GeolocationService } from './geolocation.service';
+import { MzToastService } from 'ngx-materialize';
 
 /**
  * Interfaces
@@ -27,7 +28,11 @@ export class CurrentWeatherService {
   public weatherSubject: Subject<any>;
   public weather$: Observable<any>;
 
-  constructor(private http: HttpClient, private geolocationService: GeolocationService)
+  constructor(
+    private http: HttpClient,
+    private geolocationService: GeolocationService,
+    private toastService: MzToastService
+  )
   {
     this.weatherSubject = new Subject<any>();
     this.weather$ = this.weatherSubject.asObservable().pipe(
@@ -56,7 +61,16 @@ export class CurrentWeatherService {
     const { latitud, longitud } = coords;
     const argumentos: string = `&lat=${latitud}&lon=${longitud}&appid=${key}`;
 
-    this.http.get(`${urlWeather}${argumentos}`).subscribe(this.weatherSubject);
+    this.http.get(`${urlWeather}${argumentos}`)
+            .subscribe(
+              data => this.weatherSubject.next(data),
+              error => this.showToast('Error al obtener el clima actual.', 'red')
+            );
+  }
+
+  showToast(text, color)
+  {
+    this.toastService.show(text, 4000, color);
   }
 
 }

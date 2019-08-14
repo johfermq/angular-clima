@@ -1,6 +1,11 @@
 <mz-navbar navbarClass="z-depth-3">
   <div class="container">
-    <a routerLink="/" class="brand-logo">{{ infoService.title }}</a>
+    <a routerLink="/" class="brand-logo">
+      <img src="./../assets/icons/icon-72x72.png" class="logo" alt="logo">
+    </a>
+    <mz-navbar-item-container [align]="'right'" [class]="'hide-on-small-and-down'">
+      <mz-navbar-item class="flow-text truncate">{{ infoService.title }}</mz-navbar-item>
+    </mz-navbar-item-container>
   </div>
 </mz-navbar>
 

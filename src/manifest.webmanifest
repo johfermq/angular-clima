@@ -1,11 +1,12 @@
 {
-  "name": "angular-weather",
-  "short_name": "angular-weather",
+  "name": "Angular Clima",
+  "short_name": "Angular Clima",
   "theme_color": "#303f9f",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
+  "description": "Obtenga el clima actual y el pronóstico de 3 horas por 5 días para su ciudad.",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",

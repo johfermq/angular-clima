@@ -1,50 +1,53 @@
 <mz-card *ngIf="weather$" [ngClass]="color" class="z-depth-3" [hoverable]="true">
   <mz-card-content>
 
-    <div class="row center">
+    <div class="row center margin-bottom-0">
+
       <div class="col m4">
-
         <app-weather-icon [cod]="weather$.cod"></app-weather-icon>
-
       </div>
+
       <div class="col m8">
-        <div class="row center">
+        <div class="row center margin-bottom-0">
 
           <div class="col m12" *ngIf="weather$.temp">
-
             <p class="info-text">Temperatura</p>
-            <h4 class="header font-weight-bold orange-text text-darken-2">
+            <h4 class="header font-weight-bold pink-text text-darken-3">
               {{ weather$.temp }}°
             </h4>
-
           </div>
-          <div class="col m6" *ngIf="weather$.minMaxTemp">
 
-            <h5 class="font-weight-bold amber-text text-darken-2">
-              {{ weather$.minMaxTemp.min }}°
-            </h5>
-            <p class="info-text--min-max">Mínima</p>
+          <div class="col m12" *ngIf="weather$.minMaxTemp">
+            <div class="row margin-bottom-0">
 
-          </div>
-          <div class="col m6" *ngIf="weather$.minMaxTemp">
+              <div class="col m6">
+                <h5 class="font-weight-bold pink-text text-darken-3">
+                  {{ weather$.minMaxTemp.min }}°
+                </h5>
+                <p class="info-text--min-max">Mínima</p>
+              </div>
 
-            <h5 class="font-weight-bold amber-text text-darken-2">
-              {{ weather$.minMaxTemp.max }}°
-            </h5>
-            <p class="info-text--min-max">Máxima</p>
+              <div class="col m6">
+                <h5 class="font-weight-bold pink-text text-darken-3">
+                  {{ weather$.minMaxTemp.max }}°
+                </h5>
+                <p class="info-text--min-max">Máxima</p>
+              </div>
 
+            </div>
+            <p class="info-text--min-max">{{ weather$.minMaxTemp.date }}</p>
           </div>
 
         </div>
       </div>
-      <div class="col m12">
 
+      <div class="col m12">
         <h4 class="header font-weight-bold indigo-text text-darken-2">
           {{ weather$.name }}
         </h4>
         <p class="info-text">{{ weather$.description }}</p>
-
       </div>
+
     </div>
   </mz-card-content>
 </mz-card>

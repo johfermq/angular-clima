@@ -1,15 +1,18 @@
-<div class="section indigo">
+<div class="section indigo darken-1">
   <div class="container">
     <div class="row center">
-      <div class="col m6">
+      <div class="col m7">
 
-        <h1 class="header center amber-text text-darken-2">{{ infoService.title }}</h1>
+        <h1 class="header center orange-text lighten-5">
+          <i mz-icon-mdi [icon]="'weather-partly-snowy-rainy'" [size]="'2rem'"></i>
+          {{ infoService.title }}
+        </h1>
         <div class="row center">
-          <h5 class="header col s12 light white-text">{{ infoService.description }}</h5>
+          <h5 class="header col s12 thin white-text">{{ infoService.description }}</h5>
         </div>
 
       </div>
-      <div class="col m6">
+      <div class="col m5">
 
         <app-current-weather></app-current-weather>
 

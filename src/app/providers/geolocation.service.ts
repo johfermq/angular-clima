@@ -2,6 +2,11 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 
 /**
+ * Providers
+ */
+import { MzToastService } from 'ngx-materialize';
+
+/**
  * Interfaces
  */
 import { Coords } from './../interfaces/coords.interface';
@@ -17,7 +22,7 @@ export class GeolocationService {
   public permissions$: Promise<string>;
   public myNavigator: any;
 
-  constructor() {
+  constructor(private toastService: MzToastService) {
     this.coordsSubject = new Subject<Coords>();
     this.coords$ = this.coordsSubject.asObservable();
     this.myNavigator = window.navigator;
@@ -33,7 +38,8 @@ export class GeolocationService {
   {
     if (! this.coordsPromise) this.coordsPromise = this.getGeolocation();
 
-    this.coordsPromise.then((coords: Coords) => this.coordsSubject.next(coords));
+    this.coordsPromise.then((coords: Coords) => this.coordsSubject.next(coords))
+                      .catch(error => this.showToast(error, 'red'));
   }
 
   getGeolocation(): Promise<Coords>
@@ -54,5 +60,10 @@ export class GeolocationService {
         error => reject('Error al obtener la geolocalización.')
       );
     })
+  }
+
+  showToast(text, color)
+  {
+    this.toastService.show(text, 4000, color);
   }
 }
