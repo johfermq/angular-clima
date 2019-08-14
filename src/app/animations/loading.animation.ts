@@ -7,14 +7,14 @@ export const loadingAnimation = () =>
       query(':enter', [ // nombre del evento (entrada, salida...)
           style({ opacity: 0 }), // Inicializar el valor
           stagger(100, [
-            animate('0.5s', style({ opacity: 1 }))
+            animate('350ms', style({ opacity: 1 }))
           ])
         ],
         { optional: true }
       ),
       query(':leave', [
           stagger(100, [
-            animate('0.5s', style({ opacity: 0 }))
+            animate('350ms', style({ opacity: 0 }))
           ])
         ],
         { optional: true }

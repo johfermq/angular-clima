@@ -47,13 +47,13 @@
               ],
               "optimization": true,
               "outputHashing": "none",
-              "sourceMap": false,
-              "extractCss": false,
+              "sourceMap": true,
+              "extractCss": true,
               "namedChunks": true,
-              "aot": false,
+              "aot": true,
               "extractLicenses": true,
               "vendorChunk": true,
-              "buildOptimizer": false,
+              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
