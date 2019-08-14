@@ -15,11 +15,11 @@
     ],
     "headers": [
       {
-        "source" : "**/*.@(jpg|jpeg|gif|png|svg)",
-        "headers" : [
+        "source": "**/*.@(jpg|jpeg|gif|png|svg)",
+        "headers": [
           {
-            "key" : "Cache-Control",
-            "value" : "max-age=31557600"
+            "key": "Cache-Control",
+            "value": "max-age=7200"
           },
           {
             "key": "Content-Encoding",
@@ -32,7 +32,7 @@
         "headers" : [
           {
             "key" : "Cache-Control",
-            "value" : "max-age=31557600"
+            "value" : "max-age=7200"
           },
           {
             "key": "Content-Encoding",

@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
  * Modules
  */
 import { WeatherMaterializeModule } from './weather-materialize.module';
+import { WeatherRoutingModule } from './weather-routing.module';
 
 /**
  * Componentes
@@ -29,7 +30,8 @@ import { WeatherComponent } from './weather.component';
   ],
   imports: [
     CommonModule,
-    WeatherMaterializeModule
+    WeatherMaterializeModule,
+    WeatherRoutingModule
   ],
   exports: [
     WeatherMaterializeModule

@@ -1,6 +1,10 @@
 {
   "$schema": "./node_modules/@angular/service-worker/config/schema.json",
   "index": "/index.html",
+  "appData": {
+    "name": "Angular Clima",
+    "description": "Obtenga el clima actual y el pronóstico de 3 horas por 5 días para su ciudad."
+  },
   "assetGroups": [
     {
       "name": "shell",

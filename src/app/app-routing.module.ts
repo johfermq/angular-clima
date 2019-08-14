@@ -2,21 +2,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 /**
- * Componentes
- */
-import { WeatherComponent } from './weather/weather.component';
-
-/**
  * Rutas
  */
 const routes: Routes = [
   {
-    path: '',
-    component: WeatherComponent,
+    path: 'clima',
+    loadChildren: () => import('./weather/weather.module').then(m => m.WeatherModule),
   },
   {
     path: '**',
-    redirectTo: '',
+    redirectTo: 'clima',
     pathMatch: 'full'
   }
 ];
